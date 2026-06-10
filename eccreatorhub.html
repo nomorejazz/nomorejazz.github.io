@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC Creator Hub | Electric Crow</title>
+    <style>
+        :root {
+            --electric-blue: #00e5ff;
+            --deep-slate: #0b111a;
+            --panel-bg: #131c2a;
+            --text-light: #f4f6f9;
+            --text-muted: #8fa0b5;
+            --accent-border: #1e2d42;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--deep-slate);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Back to Home Link */
+        .back-nav {
+            margin-bottom: 40px;
+        }
+
+        .back-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-nav a:hover {
+            color: var(--electric-blue);
+        }
+
+        /* Hero Section */
+        .product-hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: var(--electric-blue);
+        }
+
+        .main-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 35px;
+        }
+
+        /* Pricing & Checkout Box */
+        .buy-box {
+            background: var(--panel-bg);
+            border: 1px solid var(--accent-border);
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .buy-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--electric-blue);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .price-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .square-btn {
+            display: block;
+            background: var(--electric-blue);
+            color: var(--deep-slate);
+            text-align: center;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .square-btn:hover {
+            background: #00d4eb;
+            transform: translateY(-2px);
+        }
+
+        /* Simple Facts Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .feature-point h3 {
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-point h3::before {
+            content: "◆";
+            font-size: 0.8rem;
+        }
+
+        .feature-point p {
+            color: var(--text-muted);
+        }
+
+        /* Video Showcase Area */
+        .showcase-label {
+            text-align: center;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            background: #000;
+            border-radius: 4px;
+            margin-bottom: 60px;
+            border: 1px solid var(--accent-border);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Screenshot Placeholders */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .screenshot {
+            background: var(--panel-bg);
+            border: 1px solid var(--accent-border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .screenshot img {
+            width: 100%;
+            display: block;
+            background: #080d14;
+        }
+
+        .screenshot-info {
+            padding: 20px;
+        }
+
+        .screenshot-info h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .screenshot-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background: #060a10;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid var(--accent-border);
+        }
+
+        @media (max-width: 900px) {
+            .product-hero { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="back-nav">
+            <a href="index.html">← Back to Electric Crow Home</a>
+        </nav>
+
+        <!-- Product Header & Buy Block -->
+        <section class="product-hero">
+            <div class="intro">
+                <h1>EC Creator <span>Hub</span></h1>
+                <p class="main-description">
+                    The fastest way to move big files between computers in your office or workshop. No internet required. No cloud accounts. No monthly bills.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-point">
+                        <h3>Full Local Speed</h3>
+                        <p>Move videos and designs at the max speed your office Wi-Fi or cables allow. It stays off the internet and on your network.</p>
+                    </div>
+                    <div class="feature-point">
+                        <h3>Stay Organized</h3>
+                        <p>One shared hub for your team. Send messages to each other and keep project folders in one easy-to-find place.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buy-box">
+                <div class="price">$99.00</div>
+                <p class="price-label">One-Time Perpetual License</p>
+                <a href="https://square.link/u/fIf7pVGH" class="square-btn">Purchase & Download</a>
+                <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+                    Instant download. Use it on as many computers as you need in your local workshop.
+                </p>
+            </div>
+        </section>
+
+        <!-- Proof Section -->
+        <div class="showcase-label">System Demonstration</div>
+        
+        <div class="video-container">
+            <!-- REPLACE 'VIDEO_ID' with your YouTube code later -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" allowfullscreen></iframe>
+        </div>
+
+        <div class="gallery">
+            <!-- Snapshot 1 -->
+            <div class="screenshot">
+                <!-- COMMENT: Save your image as 'dashboard.png' in an 'images' folder -->
+                <img src="images/dashboard.png" alt="Dashboard">
+                <div class="screenshot-info">
+                    <h4>The Hub Dashboard</h4>
+                    <p>Clean and simple. This is where you pick the folders you want to share with the rest of your team.</p>
+                </div>
+            </div>
+
+            <!-- Snapshot 2 -->
+            <div class="screenshot">
+                <!-- COMMENT: Save your image as 'system-tray.png' in an 'images' folder -->
+                <img src="images/system-tray.png" alt="System Tray">
+                <div class="screenshot-info">
+                    <h4>Out of the way</h4>
+                    <p>The app sits in your bottom taskbar. It works in the background so you can stay focused on your work.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 15px;">
+            © 2026 Electric Crow™. All rights reserved. Electric Crow and the Creator Hub logo are trademarks of Electric Crow.
+        </div>
+        <a href="app.html" style="color: var(--text-muted); text-decoration: none; font-weight: 600;">◇ App Collaboration Page</a>
+    </footer>
+
+</body>
+</html>
